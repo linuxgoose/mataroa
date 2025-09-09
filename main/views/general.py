@@ -140,7 +140,7 @@ class UserCreateStepTwo(CreateView):
     form_class = forms.UserCreationForm
     success_url = reverse_lazy("dashboard")
     template_name = "main/user_create_step_two.html"
-    success_message = "welcome to mataroa :)"
+    success_message = "Welcome to BōcPress"
 
     def form_valid(self, form):
         if util.is_disallowed(form.cleaned_data.get("username")):
@@ -212,7 +212,7 @@ class UserUpdate(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
         ):
             form.add_error(
                 "custom_domain",
-                "This domain name is already connected to a mataroa blog.",
+                "This domain name is already connected to a BōcPress blog.",
             )
             return self.render_to_response(self.get_context_data(form=form))
 

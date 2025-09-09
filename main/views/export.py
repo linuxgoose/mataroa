@@ -55,7 +55,7 @@ def export_markdown(request):
 
         # create zip archive in memory
         export_name = "export-markdown-" + str(uuid.uuid4())[:8]
-        container_dir = f"{request.user.username}-mataroa-blog"
+        container_dir = f"{request.user.username}-bocpress-blog"
         zip_buffer = io.BytesIO()
         with zipfile.ZipFile(
             zip_buffer, "a", zipfile.ZIP_DEFLATED, False
@@ -77,7 +77,7 @@ def export_zola(request):
         with open("./export_base_zola/config.toml") as zola_config_file:
             zola_config = (
                 zola_config_file.read()
-                .replace("example.com", f"{request.user.username}.mataroa.blog")
+                .replace("example.com", f"{request.user.username}.bocpress.co.uk")
                 .replace("Example blog title", f"{request.user.username} blog")
                 .replace(
                     "Example blog description", f"{request.user.blog_byline or ''}"
@@ -138,7 +138,7 @@ def export_hugo(request):
             blog_byline = request.user.blog_byline or ""
             hugo_config = (
                 hugo_config_file.read()
-                .replace("example.com", f"{request.user.username}.mataroa.blog")
+                .replace("example.com", f"{request.user.username}.bocpress.co.uk")
                 .replace("Example blog title", blog_title)
                 .replace("Example blog description", blog_byline)
             )
