@@ -13,6 +13,9 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 import os
 from pathlib import Path
 from urllib import parse
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -32,16 +35,16 @@ LOCALDEV = os.getenv("LOCALDEV") == "1"
 ALLOWED_HOSTS = [
     "127.0.0.1",
     "localhost",
-    f".{os.getenv('DOMAIN', 'mataroa.blog')}",
-    ".mataroalocal.blog",
+    f".{os.getenv('DOMAIN', 'bocpress.co.uk')}",
+    ".dev-bocpress.co.uk",
     "*",
 ]
 
 ADMINS = [("Theodore Keloglou", "zf@sirodoht.com")]
 
-CANONICAL_HOST = os.getenv("DOMAIN", "mataroa.blog")
+CANONICAL_HOST = os.getenv("DOMAIN", "bocpress.co.uk")
 if LOCALDEV:
-    CANONICAL_HOST = "mataroalocal.blog:8000"
+    CANONICAL_HOST = "dev-bocpress.co.uk:8000"
 
 
 # Application definition
@@ -105,21 +108,15 @@ DATETIME_FORMAT = "F j, Y, P"
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-database_url = os.getenv("DATABASE_URL", "")
-database_url = parse.urlparse(database_url)
-# e.g. postgres://mataroa:password@127.0.0.1:5432/mataroa
-database_name = database_url.path[1:]  # url.path is '/mataroa'
+    # Default to SQLite
+    #BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": parse.unquote(database_name or ""),
-        "USER": parse.unquote(database_url.username or ""),
-        "PASSWORD": parse.unquote(database_url.password or ""),
-        "HOST": database_url.hostname,
-        "PORT": database_url.port or "",
-        "CONN_MAX_AGE": 500,
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
     }
 }
+
 
 
 # Password validation
@@ -230,53 +227,20 @@ TRANSLATE_API_TOKEN = os.getenv("TRANSLATE_API_TOKEN", "")
 # https://docs.djangoproject.com/en/4.1/ref/logging/#default-logging-configuration
 
 LOGGING = {
-    "version": 1,
-    "disable_existing_loggers": False,
-    "filters": {
-        "require_debug_false": {
-            "()": "django.utils.log.RequireDebugFalse",
-        },
-        "require_debug_true": {
-            "()": "django.utils.log.RequireDebugTrue",
-        },
-    },
-    "formatters": {
-        "django.server": {
-            "()": "django.utils.log.ServerFormatter",
-            "format": "[{server_time}] {message}",
-            "style": "{",
-        }
-    },
-    "handlers": {
-        "console": {
-            "level": "INFO",
-            "filters": ["require_debug_true"],
-            "class": "logging.StreamHandler",
-        },
-        "django.server": {
-            "level": "INFO",
-            "class": "logging.StreamHandler",
-            "formatter": "django.server",
-        },
-        "mail_admins": {
-            "level": "ERROR",
-            "filters": ["require_debug_false"],
-            "class": "django.utils.log.AdminEmailHandler",
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': 'debug.log',
         },
     },
-    "loggers": {
-        "django": {
-            "handlers": ["console", "mail_admins"],
-            "level": "INFO",
-        },
-        "django.server": {
-            "handlers": ["django.server"],
-            "level": "INFO",
-            "propagate": False,
-        },
-        "django.security.DisallowedHost": {
-            "handlers": ["console"],
-            "propagate": False,
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': True,
         },
     },
 }
