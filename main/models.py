@@ -52,7 +52,7 @@ class User(AbstractUser):
     footer_note = models.TextField(
         blank=True,
         null=True,
-        default="Powered by [mataroa.blog](https://mataroa.blog/).",
+        default="published with [BōcPress](https://bocpress.co.uk/).",
         help_text="Supports markdown",
     )
     theme_zialucia = models.BooleanField(
@@ -70,7 +70,7 @@ class User(AbstractUser):
         max_length=150,
         blank=True,
         null=True,
-        help_text="Retiring your mataroa blog? We can redirect to your new domain.",
+        help_text="Retiring your BōcPress blog? We can redirect to your new domain.",
         validators=[validators.validate_domain_name],
     )
     custom_domain = models.CharField(

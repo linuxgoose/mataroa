@@ -191,7 +191,7 @@ def generate_markdown_export(user_id):
 
     # write zip archive in /tmp/
     export_name = "export-markdown-" + str(uuid.uuid4())[:8]
-    container_dir = f"{user.username}-mataroa-blog"
+    container_dir = f"{user.username}-bocpress-blog"
     zip_outfile = f"/tmp/{export_name}.zip"
     with zipfile.ZipFile(
         zip_outfile, "a", zipfile.ZIP_DEFLATED, False

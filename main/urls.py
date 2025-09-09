@@ -4,7 +4,7 @@ from django.urls import include, path, re_path
 from main import feeds
 from main.views import api, billing, export, general, moderation
 
-admin.site.site_header = "mataroa admin"
+admin.site.site_header = "BōcPress admin"
 
 # general
 urlpatterns = [
