@@ -20,7 +20,6 @@ load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
@@ -205,6 +204,10 @@ if not DEBUG and not LOCALDEV:
     SESSION_COOKIE_SECURE = True
     CSRF_COOKIE_SECURE = True
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://bocpress.co.uk",
+    "https://*.bocpress.co.uk",
+]
 
 # Stripe
 # https://stripe.com/docs/api
