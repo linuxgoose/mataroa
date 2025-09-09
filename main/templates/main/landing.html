@@ -1,12 +1,12 @@
 {% extends 'main/layout.html' %}
 
-{% block title %}Mataroa — Blogging platform for minimalists{% endblock %}
+{% block title %}BōcPress — From Quill to Cloud{% endblock %}
 
 {% block content %}
 <main>
-    <h1>Mataroa blog</h1>
+    <h1>BōcPress</h1>
     <p>
-        Naked blogging platform, for minimalists. <em>Just write.</em>
+        From Quill to Cloud.
     </p>
     <ul class="lead">
         <li><b>Get your own simple blog in 1 minute</b> → <a href="{% url 'user_create' %}">Sign up</a></li>
@@ -15,8 +15,8 @@
             <li>Write your posts in markdown</li>
         </ul>
         <li>
-            View <a href="https://nutcroft.mataroa.blog/blog/welcome-to-mataroa/">example post</a>
-            / <a href="https://hey.mataroa.blog/">example blog</a>
+            View <a href="https://jjrobinson.bocpress.co.uk/blog/the-importance-of-user-journey-testing/">example post</a>
+            / <a href="https://https://jjrobinson.bocpress.co.uk/">example blog</a>
         </li>
     </ul>
 
@@ -32,7 +32,8 @@
         <li>No platform lock-in</li>
         <ul>
             <li><a href="{% url 'export_index' %}">Export blog anytime</a></li>
-            <li><a href="https://hey.mataroa.blog/blog/monthly-auto-exports-via-email/">Monthly auto-exports via email</a> (premium feature)</li>
+            <li><a href="https://hey.mataroa.blog/blog/monthly-auto-exports-via-email/">Monthly auto-exports via
+                    email</a> (premium feature)</li>
             <li><a href="https://hey.mataroa.blog/blog/redirect-to-new-domain/">Redirect to new domain</a></li>
         </ul>
         <li>
@@ -54,7 +55,7 @@
             <li>Import text/markdown files</li>
             <li>Export as epub book format</li>
         </ul>
-        <li>100% Affero GPL <a href="https://github.com/mataroablog">free software</a></li>
+        <li>100% Affero GPL <a href="https://github.com/linuxgoose/mataroa">free software</a></li>
         <li><a href="{% url 'transparency' %}">Business Transparency</a></li>
     </ul>
 
@@ -67,79 +68,32 @@
         </ul>
         <li>Premium — all features</li>
         <ul>
-            <li>$9/year</li>
+            <li>£12/year</li>
             <li>5% of revenue funds <a href="https://climate.stripe.com/QPSBFx">CO₂ removal</a></li>
         </ul>
     </ul>
 
     <div class="cta">
         <a class="cta-link" href="{% url 'user_create' %}">Start your blog</a>
-        — <a href="https://hey.mataroa.blog">view example blog</a>
+        — <a href="https://jjrobinson.bocpress.co.uk">view example blog</a>
     </div>
 
-    <h2>Philosophy</h2>
-    <p>
-        I care about text. I like words, and their meaning, and arguments and stories, and things
-        like typography, and fonts. I don't like visual congestion, or digital waste, or needless
-        complexity.
+    <h2>What does "BōcPress" mean?</h2>
+    <p>BōcPress was chosen because it blends heritage, literature, and modern publishing in a single, memorable name.
     </p>
-    <p>
-        Blogging is beautiful. It's about sharing opinions on the web about anything, with one's
-        own idea of aesthetics, however weird it is—or rather, <em>especially</em> because of how
-        weird it is.
-    </p>
-    <p>
-        But, lately, blogging is in a bad place. It's bedridden with trashy ads, and barbaric
-        tracking, and ugly complexity.
-    </p>
-    <p>
-        Mataroa is not like that. We built it to be about writing and writing only. We do one thing
-        and that is text. Here, one will find no social networks or obtrusive subscribe-popups.
+    <p>Let's break it down:</p>
+    <ul>
+        <li>“Bōc” comes from the Old English word for book, evoking centuries of literary tradition and the enduring
+            power of the written word.</li>
+        <li>“Press” signals publishing and dissemination, connecting the platform to both historic printing presses and
+            today’s digital tools.</li>
+    </ul>
+
+    <p>Together, BōcPress represents a modern platform for writers while honoring the timeless craft of storytelling.
     </p>
 
-    <p>
-        Here, one will notice a focus on writing regardless of how much something will be read.
-        Not being read can be demotivating, especially when one is starting to write. But it
-        shouldn't be. We recommend that one does not look into analytics. It's mostly fuel for ego.
-    </p>
-    <blockquote>
-        “What I’m really concerned about is reaching one person. And that person may be myself for
-        all I know.”
-        <br>— Jorge Luis Borges
-    </blockquote>
-
-    <p>
-        When starting a blog, there is a dizzying amount of platforms to choose from. If you know
-        what you want, go with that. <strong>But, if you're not exactly happy with the
-        <a href="{% url 'comparisons' %}">well-established choices</a> and you want
-        to try something new, try mataroa. We aim to be that breath of fresh air.</strong>
-    </p>
-    <p>
-        Nota bene, though: we don't offer themes, or other bells and whistles. We just show
-        text in a simple way. You pay us money ($9 per year), to keep doing that.
-    </p>
-
-    <p>
-        What we respect the most is that these are your words. If you decide to take them and
-        leave, we can help. Especially, if you decide to
-        <a href="https://nutcroft.mataroa.blog/blog/the-ideal-blog-platform/">self-host your blog</a>.
-        We provide tools, such as export to <a href="https://www.getzola.org/">Zola</a> or
-        <a href="https://gohugo.io/">Hugo</a> source files, and we can also redirect to your
-        new domain.
-    </p>
-    <p>
-        That is all—we hope you enjoy using mataroa and find it useful for putting down your
-        <a href="https://en.wikipedia.org/wiki/Dual_process_theory">System&nbsp;2</a> thoughts into
-        words.
-    </p>
-    <p>
-        — Theodore
-    </p>
-
-    <div class="cta">
-        <a class="cta-link" href="{% url 'user_create' %}">Start your blog</a>
-        — <a href="https://hey.mataroa.blog">view example blog</a>
-    </div>
+    <p>This name reflects our mission: to provide a digital space where stories, ideas, and voices endure, combining
+        elegance, literary heritage, and modern accessibility.</p>
 
     <h2>FAQ</h2>
 
@@ -158,7 +112,7 @@
         <div>
             <p>
                 Absolutely. The project is
-                <a href="https://github.com/mataroablog/mataroa">open source</a>
+                <a href="https://github.com/linuxgoose/mataroa">open source</a>
                 and you can find deployment documentation
                 <a href="https://docs.mataroa.blog/deployment.html">in the docs</a>.
             </p>
@@ -274,6 +228,8 @@
             </p>
         </div>
     </details>
+
+    <p>Forked from <a href="https://mataroa.blog/">mataroa</a></p>
 </main>
 
 {% include 'partials/footer.html' %}
