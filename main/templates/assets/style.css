@@ -12,6 +12,7 @@ body {
 small {
     /* fix font size in all browsers */
     font-size: 80%;
+    font-family: "Inter", "Arial", sans-serif;
 }
 
 /* prevent sub and sup from affecting the line height in all browsers */
@@ -68,8 +69,10 @@ button,
     {% if request.theme_zialucia %}
     font-size: 20px;
     {% endif %}
-    font-family: sans-serif;
+    font-family: "Merriweather", "Georgia", "Times New Roman", serif;
+
     line-height: 1.5;
+    font-size: 16px;
 
     color-scheme: light dark;
 
