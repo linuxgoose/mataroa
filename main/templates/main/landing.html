@@ -9,9 +9,9 @@
         From Quill to Cloud.
     </p>
     <ul class="lead">
-        <li><b>Get your own simple blog in 1 minute</b> → <a href="{% url 'user_create' %}">Sign up</a></li>
+        <li><b>A matter of mere moments to join</b> → <a href="{% url 'user_create' %}">Sign up</a></li>
         <ul>
-            <li>Hosted in &lt;username&gt;.bocpress.co.uk or yourdomain.com</li>
+            <li>Hosted at &lt;username&gt;.bocpress.co.uk or yourdomain.com</li>
             <li>Write your posts in markdown</li>
         </ul>
         <li>
@@ -23,40 +23,40 @@
     <h2>Features</h2>
     <ul>
         <li>
-            <a href="{% url 'methodology' %}">Never ads. Zero tracking</a>
+            <a href="{% url 'methodology' %}">Respects your privacy, keeping all trackers, advertisements, and hidden scripts at bay</a>
         </li>
         <ul>
             <li>No cookies for analytics or tracking</li>
             <li>No email required for signup</li>
         </ul>
-        <li>No platform lock-in</li>
+        <li>Freedom to move your blog—no platform lock-in</li>
         <ul>
-            <li><a href="{% url 'export_index' %}">Export blog anytime</a></li>
-            <li><a href="https://hey.mataroa.blog/blog/monthly-auto-exports-via-email/">Monthly auto-exports via
+            <li><a href="{% url 'export_index' %}">Export your blog at anytime</a></li>
+            <li><a href="https://hey.mataroa.blog/blog/monthly-auto-exports-via-email/">Monthly automatic exports via
                     email</a> (premium feature)</li>
             <li><a href="https://hey.mataroa.blog/blog/redirect-to-new-domain/">Redirect to new domain</a></li>
         </ul>
         <li>
-            <a href="{% url 'guides_customdomain' %}">Custom domain</a> (premium feature)
+            <a href="{% url 'guides_customdomain' %}">Use your own custom domain</a> (premium feature)
         </li>
 
         <li>
-            <a href="{% url 'guides_images' %}">Image hosting</a>
+            <a href="{% url 'guides_images' %}">Image hosting is included</a>
         </li>
-        <li>Subscriptions</li>
+        <li>Feed Subscriptions available for readers</li>
         <ul>
             <li>via RSS</li>
             <li>via Email (newsletter)</li>
         </ul>
-        <li>Also:</li>
+        <li>Additional conveniences::</li>
         <ul>
             <li>Analytics (backend based)</li>
-            <li><a href="{% url 'api_docs' %}">API</a></li>
+            <li><a href="{% url 'api_docs' %}">API endpoints for advanced control</a></li>
             <li>Import text/markdown files</li>
-            <li>Export as epub book format</li>
+            <li>Export content as an ePub book</li>
         </ul>
         <li>100% Affero GPL <a href="https://github.com/linuxgoose/mataroa">free software</a></li>
-        <li><a href="{% url 'transparency' %}">Business Transparency</a></li>
+        <li><a href="{% url 'transparency' %}">Business Transparency and Oppenness</a></li>
     </ul>
 
     <h2>Pricing</h2>
@@ -69,7 +69,7 @@
         <li>Premium — all features</li>
         <ul>
             <li>£12/year</li>
-            <li>5% of revenue funds <a href="https://climate.stripe.com/QPSBFx">CO₂ removal</a></li>
+            <li>5% of revenue funds <a href="#">CO₂ removal</a></li>
         </ul>
     </ul>
 
@@ -101,14 +101,14 @@
         <summary>Do you support custom CSS?</summary>
         <div>
             <p>
-                No. The philosophy of mataroa is to be as minimal as possible without enabling
-                too many decisions about styling. Sorry! :)
+                Not at the moment. The philosophy of BōcPress is to be as minimal as possible without enabling
+                too many decisions about styling. We understand that this is not what some prefer and are open to ideas.
             </p>
         </div>
     </details>
 
     <details>
-        <summary>Can I self-host mataroa?</summary>
+        <summary>Can I self-host BōcPress?</summary>
         <div>
             <p>
                 Absolutely. The project is
@@ -120,13 +120,12 @@
     </details>
 
     <details>
-        <summary>Why should I use mataroa instead of Substack/WordPress/etc?</summary>
+        <summary>Why should I use BōcPress instead of Substack/WordPress/etc?</summary>
         <div>
             <p>
-                Mataroa follows a minimalist philosophy. It's fast, simple, and prioritises the
-                essence, the text content, over fancy features. The platform is based on a
-                design philosophy of minimalism with strong data interoperability. You own your
-                data and you can export it easily as well.
+                BōcPress embraces a minimalist ethos: swift, unadorned, and focused on the heart of your words. 
+                It values simplicity over bells and whistles, while offering strong data interoperability. 
+                Your content is yours to keep, and exporting it is effortless.
             </p>
         </div>
     </details>
@@ -135,11 +134,13 @@
         <summary>Will you add themes?</summary>
         <div>
             <p>
-                We are not interested in adding features that give more options to users. It's
-                part of our philosophy to enable one to just write, without giving options for
-                design, colours, or layouts. We understand that's not what everyone wants but we
-                want to cater to people that either struggle with writing and don’t want too
-                many distractions, or to people who want a minimal blog :)
+                At present, there are no plans to add custom themes or templates. It's
+                part of our philosophy to enable one to just write and publish without
+                having to make too many decisions about styling. We understand that this is not what some prefer and are open to ideas.
+            </p>
+            <p>
+                Nonetheless, there are discussions around adding <i>some</i> minor styling decisions for authors, 
+                but these are unplanned at the moment. Feel free to get in touch with any ideas you may have around this topic.
             </p>
         </div>
     </details>
@@ -148,7 +149,9 @@
         <summary>What about tags or categories?</summary>
         <div>
             <p>
-                We think tags are too complicated of a feature for the simpleton mataroa wants to be.
+                These are not currently supported, however there are plans to add them. We want to keep the platform simple, 
+                but understand that tags or categories can help with organization and discovery. If implemented, 
+                they will be designed to remain minimal and unobtrusive.
             </p>
         </div>
     </details>
@@ -157,9 +160,10 @@
         <summary>What about pagination?</summary>
         <div>
             <p>
-                Pagination can be annoying as it breaks the browser search across all post titles.
-                Additionally, because of how fast and simple mataroa is, speed is not an issue
-                even with thousands of posts.
+                Pagination can be difficult as it breaks the browser search across all post titles.
+                Additionally, because of how fast and simple BōcPress is, speed is not an issue
+                even with thousands of posts. This is a feature we may consider in the future, but
+                it is not currently planned.
             </p>
         </div>
     </details>
@@ -173,7 +177,7 @@
                 supports
                 <a href="http://daringfireball.net/projects/markdown/syntax">
                     John Gruber’s markdown spec</a>,
-                which does not define strikethrough text. We might migrate to another
+                which does not define strikethrough text. Discussions have been had on migrating to another
                 markdown library at some point in the future, though, this is not
                 yet planned.
             </p>
@@ -181,13 +185,12 @@
     </details>
 
     <details>
-        <summary>Would you consider a rich editor option?</summary>
+        <summary>Would you consider a rich text editor option?</summary>
         <div>
             <p>
-                We think a rich editor is too much for mataroa. For example, a rich editor
-                implementation such as Trix, does looks pretty cool yet the complexity is
-                too high with 200K of JavaScript code. Saving HTML in the database instead of
-                simple text is also an annoyance.
+                At present, a rich text editor is too much for BōcPress. Something like Trix does look like it would be great, 
+                however the added complexity is too high with 200K of JavaScript code. Saving HTML in the database instead of
+                simple text is also less than ideal.
             </p>
         </div>
     </details>
@@ -196,9 +199,7 @@
         <summary>Would you add support for LaTeX-style math expressions?</summary>
         <div>
             <p>
-                We have considered this feature. We don't want to add a JavaScript library to
-                handle this on the frontend. However, we're open to creating this functionality in
-                the future to work from the backend.
+                This was recently introduced in V1.3.1. Please see the <a href="https://github.com/linuxgoose/mataroa/pull/20">pull request</a> for more information or give it a try yourself.
             </p>
         </div>
     </details>
@@ -213,7 +214,7 @@
                 <a href="https://github.com/mermaid-js/mermaid/blob/develop/dist/mermaid.min.js">
                     2.7MB minified
                 </a>
-                JavaScript which is extremely too much for mataroa. Yet, we would be interested
+                JavaScript which is far too heavy for BōcPress' mission. However, we would be interested
                 in implementing something similar if it was rendered on the backend.
             </p>
         </div>

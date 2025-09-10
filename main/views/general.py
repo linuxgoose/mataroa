@@ -1172,7 +1172,7 @@ def methodology(request):
 
 
 def transparency(request):
-    monthly_revenue = models.User.objects.filter(is_premium=True).count() * 9 / 12
+    monthly_revenue = models.User.objects.filter(is_premium=True).count() * 12 / 12
     published_posts = models.Post.objects.filter(published_at__isnull=False).count()
 
     zero_users = (
