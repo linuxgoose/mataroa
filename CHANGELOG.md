@@ -2,6 +2,9 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.3.1](https://github.com/linuxgoose/mataroa/releases/tag/1.3.1)
+* Add LaTeX Support with l2m4m dependency & mathml
+
 ## [1.3.0](https://github.com/mataroablog/mataroa/compare/v1.2...v1.3)
 
 ### Important changes
