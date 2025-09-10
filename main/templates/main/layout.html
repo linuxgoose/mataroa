@@ -46,7 +46,7 @@
             | <a href="{% url 'dashboard' %}">Dashboard</a>
             | <a href="{% url 'post_create' %}">New post</a>
             {% if blog_user.custom_domain %}
-            | <a href="//{{ blog_user.custom_domain }}{{ request.path }}">See in {{ blog_user.custom_domain }}</a>
+            | <a href="//{{ blog_user.custom_domain }}{{ request.path }}">View at {{ blog_user.custom_domain }}</a>
             {% endif %}
         </nav>
         {% endif %}
