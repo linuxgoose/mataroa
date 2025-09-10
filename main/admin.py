@@ -49,6 +49,7 @@ class UserAdmin(DjUserAdmin):
                     "about",
                     "blog_title",
                     "blog_byline",
+                    "blog_index_content",
                     "footer_note",
                     "theme_zialucia",
                     "redirect_domain",

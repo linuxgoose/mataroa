@@ -176,6 +176,7 @@ class UserUpdate(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
         "email",
         "blog_title",
         "blog_byline",
+        "blog_index_content",
         "subscribe_note",
         "footer_note",
         "theme_zialucia",

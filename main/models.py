@@ -42,6 +42,11 @@ class User(AbstractUser):
         null=True,
         help_text="Supports markdown",
     )
+    blog_index_content = models.TextField(
+        blank=True,
+        null=True,
+        help_text="Supports markdown",
+    )
     subscribe_note = models.CharField(
         max_length=350,
         blank=True,
@@ -159,6 +164,16 @@ class User(AbstractUser):
     @property
     def blog_byline_as_html(self):
         return util.md_to_html(self.blog_byline)
+    
+    @property
+    def blog_index_content_as_text(self):
+        linker = bleach.linkifier.Linker(callbacks=[lambda attrs, new: None])
+        html_text = util.md_to_html(self.blog_index_content, strip_tags=True)
+        return linker.linkify(html_text)
+
+    @property
+    def blog_index_content_as_html(self):
+        return util.md_to_html(self.blog_index_content)
 
     @property
     def about_as_html(self):
