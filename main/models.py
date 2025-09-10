@@ -82,7 +82,7 @@ class User(AbstractUser):
         max_length=150,
         blank=True,
         null=True,
-        help_text="To setup: Add an A record in your domain's DNS with IP 95.217.30.133",
+        help_text="To setup: Add an A record in your domain's DNS with IP 78.47.67.77",
         validators=[validators.validate_domain_name],
     )
 
