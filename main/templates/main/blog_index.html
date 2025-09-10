@@ -32,6 +32,12 @@
     </div>
     {% endif %}
 
+    {% if blog_user.blog_index_content %}
+    <div itemprop="about">
+        {{ blog_user.blog_index_content_as_html|safe }}
+    </div>
+    {% endif %}
+
     {% if request.user.is_authenticated and request.subdomain == request.user.username and drafts %}
     <div class="drafts">
         <strong>
