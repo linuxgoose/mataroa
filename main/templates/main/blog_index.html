@@ -15,7 +15,7 @@
 <nav>
     {% if blog_user.show_posts_in_nav or pages %}
         {% if blog_user.show_posts_in_nav %}
-            <a href="{% url 'post_list' %}">Posts</a>
+            <a href="{% url 'post_list' %}">{% if blog_user.posts_page_title %}{{ blog_user.posts_page_title }}{% else %}Posts{% endif %}</a>
             {% if pages %}
                 |
             {% endif %}
