@@ -234,6 +234,7 @@ class UserUpdate(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
         "post_backups_on",
         "show_posts_on_homepage",
         "show_posts_in_nav",
+        "noindex_on",
     ]
     template_name = "main/user_update.html"
     success_message = "settings updated"
