@@ -58,6 +58,8 @@ class UserAdmin(DjUserAdmin):
                     "notifications_on",
                     "mail_export_on",
                     "post_backups_on",
+                    "show_posts_on_homepage",
+                    "show_posts_in_nav",
                     "export_unsubscribe_key",
                     "webring_name",
                     "webring_prev_url",
