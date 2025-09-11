@@ -26,7 +26,7 @@
     <h1 itemprop="name">{{ blog_user.blog_title }}</h1>
     {% endif %}
 
-    <h2 itemprop="name">Posts</h2>
+    <h2 itemprop="name">{% if blog_user.posts_page_title %}{{ blog_user.posts_page_title }}{% else %}Posts{% endif %}</h2>
 
     {% if request.user.is_authenticated and request.subdomain == request.user.username and drafts %}
     <div class="drafts">

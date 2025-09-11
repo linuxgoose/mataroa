@@ -220,6 +220,7 @@ class UserUpdate(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
         "username",
         "email",
         "blog_title",
+        "posts_page_title",
         "blog_byline",
         "blog_index_content",
         "subscribe_note",
