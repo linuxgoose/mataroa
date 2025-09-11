@@ -83,6 +83,7 @@ urlpatterns += [
     path(
         "post-backups/create/", general.SnapshotCreate.as_view(), name="snapshot_create"
     ),
+    path('post-backups/<int:pk>/delete/', general.SnapshotDelete.as_view(), name='snapshot_delete'),
     path("post-backups/", general.SnapshotList.as_view(), name="snapshot_list"),
     path(
         "post-backups/<int:pk>/",

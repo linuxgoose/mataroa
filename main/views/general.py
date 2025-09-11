@@ -469,7 +469,20 @@ class SnapshotCreate(LoginRequiredMixin, CreateView):
             id__in=most_recent
         ).delete()
         return HttpResponse()
+    
+class SnapshotDelete(LoginRequiredMixin, DeleteView):
+    model = models.Snapshot
+    success_url = reverse_lazy('snapshot_list')
+    success_message = "snapshot '%(title)s' deleted"
 
+    def get_queryset(self):
+        return models.Snapshot.objects.filter(owner=self.request.user)
+
+    def form_view(self, request):
+        success_url = self.get_success_url()
+        self.object.delete()
+        messages.success(self.request, self.success_message % self.object.__dict__)
+        return HttpResponseRedirect(success_url)
 
 class SnapshotList(LoginRequiredMixin, ListView):
     model = models.Snapshot

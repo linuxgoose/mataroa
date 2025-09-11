@@ -28,6 +28,8 @@
         >{{ object.body }}</textarea>
     </p>
 
+    <a href="{% url 'snapshot_delete' object.id %}" class="alert-error">Delete snapshot</a>
+
     <p>
         <a href="{% url 'snapshot_list' %}">« Post Backups</a>
     </p>
