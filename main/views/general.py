@@ -33,6 +33,7 @@ from django.views.generic import (
     ListView,
     TemplateView,
     UpdateView,
+    View,
 )
 
 from main import denylist, forms, models, util
@@ -236,6 +237,7 @@ class UserUpdate(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
         "show_posts_on_homepage",
         "show_posts_in_nav",
         "noindex_on",
+        "robots_txt",
     ]
     template_name = "main/user_update.html"
     success_message = "settings updated"
@@ -1328,6 +1330,11 @@ def transparency(request):
         },
     )
 
+class robotstxt(View):
+    def get(self, request):
+        user = get_object_or_404(models.User, username=self.request.subdomain)
+        content = user.robots_txt or "User-agent: *\nDisallow:\nAllow: /"
+        return HttpResponse(content, content_type="text/plain")
 
 def sitemap(request):
     if not hasattr(request, "subdomain"):

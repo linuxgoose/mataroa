@@ -109,6 +109,7 @@ urlpatterns += [
     path("index.xml", feeds.RSSBlogFeed()),
 
     path("sitemap.xml", general.sitemap, name="sitemap"),
+    path("robots.txt", general.robotstxt.as_view(), name="robots_txt"),
     path("newsletter/", general.Notification.as_view(), name="notification_subscribe"),
     path(
         "newsletter/unsubscribe/",

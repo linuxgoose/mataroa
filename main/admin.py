@@ -73,6 +73,7 @@ class UserAdmin(DjUserAdmin):
                     "is_grandfathered",
                     "is_approved",
                     "api_key",
+                    "robots_txt",
                 ),
             },
         ),

@@ -122,6 +122,13 @@ class User(AbstractUser):
         help_text="Add a noindex meta tag so your blog is not indexed by search engines.",
         verbose_name="noindex: Prevent Search Engine Indexing",
     )
+    robots_txt = models.TextField(
+        blank=True,
+        help_text="Custom robots.txt content for your blog. Leave blank for default.",
+        verbose_name="robots.txt",
+        null=True,
+        default="User-agent: *\nDisallow:\nAllow: /",
+    )
     export_unsubscribe_key = models.UUIDField(default=uuid.uuid4, unique=True)
 
     # webring related
