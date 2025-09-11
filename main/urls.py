@@ -103,6 +103,11 @@ urlpatterns += [
 urlpatterns += [
     path("rss/", feeds.RSSBlogFeed(), name="rss_feed"),
     path("feed/", feeds.RSSBlogFeed(), name="rss_feed"),
+    path("feed/rss/", feeds.RSSBlogFeed()),
+    path("feed.xml", feeds.RSSBlogFeed()),
+    path("rss.xml", feeds.RSSBlogFeed()),
+    path("index.xml", feeds.RSSBlogFeed()),
+
     path("sitemap.xml", general.sitemap, name="sitemap"),
     path("newsletter/", general.Notification.as_view(), name="notification_subscribe"),
     path(
