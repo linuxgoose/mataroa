@@ -33,9 +33,11 @@ img {
             <h2>Account</h2>
 
             <p>
-                ID: <a href="{% url 'admin:main_user_change' user.id %}" target="_blank" title="{{ user.date_joined }}">
-                    {{ user.id }}
-                </a>
+                ID: {% if user %}
+                    <a href="{% url 'admin:main_user_change' user.id %}" target="_blank" title="{{ user.date_joined }}">
+                        {{ user.id }}
+                    </a>
+                {% endif %}
             </p>
             <p>
                 {{ user.stripe_customer_id|default:"" }}
