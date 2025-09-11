@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.3.2](https://github.com/linuxgoose/mataroa/releases/tag/1.3.2)
+* add blog index content by @linuxgoose in https://github.com/linuxgoose/mataroa/pull/23
+* [add custom robots.txt blog setting](https://github.com/linuxgoose/mataroa/commit/47bd06b3a71d75ddf73a91958b2e3101c675633e) by @linuxgoose
+* [add custom posts page title](https://github.com/linuxgoose/mataroa/commit/3ac28fdb08b59310c6fcc313a6af511320a66f50)
+* [add more feed urls](https://github.com/linuxgoose/mataroa/commit/b57c9d0b06642b4983258ffd2bdf57cd18d49613) by @linuxgoose
+* [add noindex support - meta tag](https://github.com/linuxgoose/mataroa/commit/dcbd6e2360068953bcd72910c76574b4a63a35a0) by @linuxgoose
+* [add ability to set post_backups_on in blog settings](https://github.com/linuxgoose/mataroa/commit/ac590b7092b9786b1d7e4d1cb6aa6a7c88937237) by @linuxgoose
+* [add blog index content](https://github.com/linuxgoose/mataroa/commit/f480264f048edbf0b9164388e3a77de95c48fc55) by @linuxgoose
+
 ## [1.3.1](https://github.com/linuxgoose/mataroa/releases/tag/1.3.1)
 * Add LaTeX Support with l2m4m dependency & mathml
 
