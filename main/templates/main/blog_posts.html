@@ -1,6 +1,6 @@
 {% extends 'main/layout.html' %}
 
-{% block title %}{{ blog_user.blog_title|default:blog_user.username }}{% endblock %}
+{% block title %}Posts | {{ blog_user.blog_title|default:blog_user.username }}{% endblock %}
 
 {% block meta_description %}{{ blog_user.blog_byline|default:"" }}{% endblock %}
 
@@ -13,21 +13,12 @@
 
 {% block content %}
 <nav>
-    {% if blog_user.show_posts_in_nav or pages %}
-        {% if blog_user.show_posts_in_nav %}
-            <a href="{% url 'post_list' %}">Posts</a>
-            {% if pages %}
-                |
-            {% endif %}
-        {% endif %}
-
-        {% for page in pages %}
-            <a href="{% url 'page_detail' page.slug %}">{{ page.title }}</a>
-            {% if not forloop.last %}
-                |
-            {% endif %}
-        {% endfor %}
+    {% for page in pages %}
+    <a href="{% url 'page_detail' page.slug %}">{{ page.title }}</a>
+    {% if not forloop.last %}
+    |
     {% endif %}
+    {% endfor %}
 </nav>
 
 <main class="blog" itemscope itemtype="http://schema.org/Blog">
@@ -35,19 +26,8 @@
     <h1 itemprop="name">{{ blog_user.blog_title }}</h1>
     {% endif %}
 
-    {% if blog_user.blog_byline %}
-    <div class="byline" itemprop="about">
-        {{ blog_user.blog_byline_as_html|safe }}
-    </div>
-    {% endif %}
+    <h2 itemprop="name">Posts</h2>
 
-    {% if blog_user.blog_index_content %}
-    <div itemprop="about">
-        {{ blog_user.blog_index_content_as_html|safe }}
-    </div>
-    {% endif %}
-
-    {% if blog_user.show_posts_on_homepage %}
     {% if request.user.is_authenticated and request.subdomain == request.user.username and drafts %}
     <div class="drafts">
         <strong>
@@ -81,7 +61,6 @@
         {% endif %}
         {% endfor %}
     </ul>
-    {% endif %}
 </main>
 
 {% include 'partials/webring.html' %}

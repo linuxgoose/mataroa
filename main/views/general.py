@@ -48,7 +48,6 @@ def blog_index(request):
         f"//{request.user.username}.{settings.CANONICAL_HOST}{reverse('index')}"
     )
 
-
 @login_required
 def dashboard(request):
     if hasattr(request, "subdomain"):
@@ -107,6 +106,52 @@ def index(request):
 
     return render(request, "main/landing.html")
 
+def post_list(request):
+    if hasattr(request, "subdomain"):
+        if models.User.objects.filter(username=request.subdomain).exists():
+            drafts = []
+            if request.user.is_authenticated and request.user == request.blog_user:
+                posts = models.Post.objects.filter(owner=request.blog_user).defer(
+                    "body"
+                )
+                drafts = models.Post.objects.filter(
+                    owner=request.blog_user,
+                    published_at__isnull=True,
+                ).defer("body")
+            else:
+                models.AnalyticPage.objects.create(user=request.blog_user, path="index")
+                posts = models.Post.objects.filter(
+                    owner=request.blog_user,
+                    published_at__isnull=False,
+                    published_at__lte=timezone.now().date(),
+                ).defer("body")
+
+            return render(
+                request,
+                "main/blog_posts.html",
+                {
+                    "subdomain": request.subdomain,
+                    "blog_user": request.blog_user,
+                    "posts": posts,
+                    "drafts": drafts,
+                    "pages": models.Page.objects.filter(
+                        owner=request.blog_user, is_hidden=False
+                    ).defer("body"),
+                },
+            )
+        else:
+            return redirect("//" + settings.CANONICAL_HOST + reverse("index"))
+    else:
+        if request.user.is_authenticated:
+            return redirect("post_list_dashboard")
+        
+        return render(request, "404.html")
+    
+class PostList(LoginRequiredMixin, ListView):
+    model = models.Post
+
+    def get_queryset(self):
+        return models.Post.objects.filter(owner=self.request.user)
 
 def domain_check(request):
     """
@@ -186,6 +231,8 @@ class UserUpdate(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
         "notifications_on",
         "mail_export_on",
         "redirect_domain",
+        "show_posts_on_homepage",
+        "show_posts_in_nav",
     ]
     template_name = "main/user_update.html"
     success_message = "settings updated"
@@ -294,7 +341,6 @@ class PostDetail(DetailView):
                 return redirect("index")
 
         return super().dispatch(request, *args, **kwargs)
-
 
 class PostCreate(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     model = models.Post

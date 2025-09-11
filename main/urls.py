@@ -79,6 +79,7 @@ urlpatterns += [
 
 # blog posts and post snapshots
 urlpatterns += [
+    path("posts-dashboard/", general.PostList.as_view(), name="post_list_dashboard"),
     path(
         "post-backups/create/", general.SnapshotCreate.as_view(), name="snapshot_create"
     ),
@@ -89,6 +90,7 @@ urlpatterns += [
         name="snapshot_detail",
     ),
     path("new/post/", general.PostCreate.as_view(), name="post_create"),
+    path("posts/", general.post_list, name="post_list"),
     path("blog/<slug:slug>/", general.PostDetail.as_view(), name="post_detail"),
     path("posts/<slug:slug>/", general.post_detail_redir, name="post_detail_redir_a"),
     path("post/<slug:slug>/", general.post_detail_redir, name="post_detail_redir_b"),

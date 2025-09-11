@@ -106,6 +106,16 @@ class User(AbstractUser):
         help_text="Enable/disable automatic post backups.",
         verbose_name="Post Backups On",
     )
+    show_posts_on_homepage = models.BooleanField(
+        default=True,
+        help_text="Show/hide posts on the homepage.",
+        verbose_name="Show Posts On Homepage",
+    )
+    show_posts_in_nav = models.BooleanField(
+        default=False,
+        help_text="Show/hide posts in the navigation bar.",
+        verbose_name="Show Posts In Nav",
+    )
     export_unsubscribe_key = models.UUIDField(default=uuid.uuid4, unique=True)
 
     # webring related
