@@ -60,6 +60,7 @@ class UserAdmin(DjUserAdmin):
                     "post_backups_on",
                     "show_posts_on_homepage",
                     "show_posts_in_nav",
+                    "noindex_on",
                     "export_unsubscribe_key",
                     "webring_name",
                     "webring_prev_url",

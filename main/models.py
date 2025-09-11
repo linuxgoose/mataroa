@@ -116,6 +116,11 @@ class User(AbstractUser):
         help_text="Show/hide posts in the navigation bar.",
         verbose_name="Show Posts In Nav",
     )
+    noindex_on = models.BooleanField(
+        default=False,
+        help_text="Add a noindex meta tag so your blog is not indexed by search engines.",
+        verbose_name="noindex: Prevent Search Engine Indexing",
+    )
     export_unsubscribe_key = models.UUIDField(default=uuid.uuid4, unique=True)
 
     # webring related
