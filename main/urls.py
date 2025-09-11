@@ -99,6 +99,7 @@ urlpatterns += [
 # blog extras
 urlpatterns += [
     path("rss/", feeds.RSSBlogFeed(), name="rss_feed"),
+    path("feed/", feeds.RSSBlogFeed(), name="rss_feed"),
     path("sitemap.xml", general.sitemap, name="sitemap"),
     path("newsletter/", general.Notification.as_view(), name="notification_subscribe"),
     path(
